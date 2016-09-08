@@ -1,0 +1,28 @@
+body {
+    /*background-image: url("../images/peanutsstrip.jpg");*/
+    background-color: black;
+    color: blue;
+    font-weight: bold;
+    font-size: 25px;
+}
+button, div, form, input {
+    margin: 10px;
+}
+
+.cartoon {
+    display: inline-flex;
+    flex-flow: wrap;
+    border: 2px solid red;
+}
+
+img {
+    padding: 20px;
+}
+
+.marshmellow {
+    border: 2px solid blue;
+}
+
+.give-me-something {
+    border: 2px solid white;
+}
