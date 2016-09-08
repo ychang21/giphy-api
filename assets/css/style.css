@@ -10,9 +10,10 @@ button, div, form, input {
 }
 
 .cartoon {
-    display: inline-flex;
-    flex-flow: wrap;
+    /*display: inline-flex;
+    flex-flow: wrap;*/
     border: 2px solid red;
+    text-align: center;
 }
 
 img {
