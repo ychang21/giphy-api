@@ -8,7 +8,7 @@ var APIkey = "dc6zaTOxFJmzC";
 function displayCartoonInfo(){
     $('#gifs').empty();
     var cartoon = $(this).attr('data-name');
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + cartoon +"&api_key=" + APIkey + "&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + cartoon +"&api_key=" + APIkey + "&limit=10";
         
          
     $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
