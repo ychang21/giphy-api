@@ -24,7 +24,7 @@ function displayCartoonInfo(){
                 rate = $('<p>').text( "Rating: " + result[i].rating.toUpperCase());
             }
             cartoonDiv.append(rate);
-            var image = $('<img>');
+            var image = $('<img alt="cartoon gif">');
             image.addClass("marshmellow");
             image.attr("src", result[i].images.fixed_height_still.url);
             // image.attr("src", result[i].images.downsized_still.url);
