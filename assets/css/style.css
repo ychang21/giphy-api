@@ -25,10 +25,8 @@ h1 {
 
 img {
     padding: 20px;
-}
-
-.marshmellow {
-    border: 2px solid blue;
+    width: 100%;
+    height: auto;
 }
 
 .give-me-something {

@@ -17,21 +17,18 @@ function displayCartoonInfo(){
         var cartoonDiv = $('<div class="cartoon">');
         for (var i=0; i<result.length; i++){
             var rate = $('<p>').text( "Rating: " + result[i].rating.toUpperCase());
-            //conditions for if gif does not have a rating in object
+            //conditions for if gif does not have a rating listed in the object
             if (result[i].rating == "") {
                 rate = $('<p>').text("Rating: N/A");
             } else {
                 rate = $('<p>').text( "Rating: " + result[i].rating.toUpperCase());
             }
             cartoonDiv.append(rate);
-            var image = $('<img alt="cartoon gif">');
+            var image = $('<img class="img-responsive" alt="cartoon gif">');
             image.addClass("marshmellow");
             image.attr("src", result[i].images.fixed_height_still.url);
-            // image.attr("src", result[i].images.downsized_still.url);
             image.attr("data-still", result[i].images.fixed_height_still.url);
-            // image.attr("data-still", result[i].images.downsized_still.url);
             image.attr("data-animate", result[i].images.fixed_height.url);
-            // image.attr("data-animate", result[i].images.downsized.url);
             image.attr("data-state", "still");
             cartoonDiv.append(image);
             $('#gifs').prepend(cartoonDiv);
