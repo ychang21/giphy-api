@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 //array of cartoons to start with
-var cartoonList = ["The Simpsons", "Popeye", "Steven Universe", "Animaniacs", "Teenage Mutant Ninja Turtles", "Dexter's Laboratory"];
+var cartoonList = ["THE SIMPSONS", "POPEYE", "STEVEN UNIVERSE", "ANIMANIACS", "TEENAGE MUTANT NINJA TURTLES", "DEXTER'S LABORATORY"];
 var APIkey = "dc6zaTOxFJmzC";
 
-//showing the cartoon information in the gifs div
+//appending the cartoon information in the gifs div
 function displayCartoonInfo(){
     $('#gifs').empty();
     var cartoon = $(this).attr('data-name');
@@ -17,7 +17,7 @@ function displayCartoonInfo(){
         var cartoonDiv = $('<div class="cartoon">');
         for (var i=0; i<result.length; i++){
             var rate = $('<p>').text( "Rating: " + result[i].rating.toUpperCase());
-            //conditions for no rating in object
+            //conditions for if gif does not have a rating in object
             if (result[i].rating == "") {
                 rate = $('<p>').text("Rating: N/A");
             } else {
@@ -40,7 +40,7 @@ function displayCartoonInfo(){
 
 }
 
-//creating buttons
+//creating buttons from array
 function makeButtons(){ 
     $('#buttons').empty();
     for (var i = 0; i < cartoonList.length; i++){
@@ -54,10 +54,19 @@ function makeButtons(){
 
 //adding user input to array and creating button for it
 $('#addCartoon').on('click', function(){ 
-    var cartoon = $('#cartoon-input').val().trim(); 
-    cartoonList.push(cartoon);
-    makeButtons();
-    return false;
+    var cartoon = $('#cartoon-input').val().trim().toUpperCase(); 
+    //conditions to prevent blanks and repeats to turn into buttons
+    if (!cartoon) {
+        alert("Please type in a cartoon of your choice");
+        return false;
+    } else if (($.inArray(cartoon, cartoonList)) > -1) { 
+        alert("That cartoon has already been added");
+        return false;
+    } else {
+        cartoonList.push(cartoon);
+        makeButtons();
+        return false;
+    }
 });
 
 //appends gifs and rating as soon as it is clicked  
@@ -78,10 +87,6 @@ $(document).on('click', '.marshmellow', function(){
         $(this).attr("data-state", "still");
     }
 });
-
-//conditions for no repeat buttons
-
-//conditions for no blank buttons
 
 
 });

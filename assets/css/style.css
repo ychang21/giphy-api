@@ -1,5 +1,5 @@
 body {
-    /*background-image: url("../images/peanutsstrip.jpg");*/
+    background-image: url("../images/cartooncollage.jpg");
     background-color: black;
     color: blue;
     font-weight: bold;
@@ -9,9 +9,16 @@ button, div, form, input {
     margin: 10px;
 }
 
+form {
+    background-color: black;
+}
+
+h1 {
+    background-color: black;
+}
+
 .cartoon {
-    /*display: inline-flex;
-    flex-flow: wrap;*/
+    background-color: black;
     border: 2px solid red;
     text-align: center;
 }
