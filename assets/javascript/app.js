@@ -40,6 +40,7 @@ function displayCartoonInfo(){
 //creating buttons from array
 function makeButtons(){ 
     $('#buttons').empty();
+    $('#cartoon-input').val("");
     for (var i = 0; i < cartoonList.length; i++){
         var a = $('<button type="button" class="btn btn-primary">');
         a.addClass('give-me-something'); 
@@ -58,6 +59,7 @@ $('#addCartoon').on('click', function(){
         return false;
     } else if (($.inArray(cartoon, cartoonList)) > -1) { 
         alert("That cartoon has already been added");
+        $('#cartoon-input').val("");
         return false;
     } else {
         cartoonList.push(cartoon);
